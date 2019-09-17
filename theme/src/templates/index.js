@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import Home from '../components/Home';
 
 export default function PageTemplate({
@@ -11,6 +12,7 @@ export default function PageTemplate({
     <Home
       siteTitle={pageContext.siteTitle}
       siteDescription={pageContext.siteDescription}
+      siteGreeting={pageContext.siteGreeting}
       copyright={pageContext.copyrightMessage}
       socialLinks={pageContext.socialLinks}
       brand={pageContext.brand}

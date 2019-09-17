@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 // import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
-import ToolsGrid from './Grid/ToolsGrid';
+import PostGrid from './Grid/PostGrid';
 import { isAuthenticated } from '../utils/Auth';
 import Layout from './layout';
 import SEO from './seo';
@@ -27,6 +27,7 @@ const useStyles = makeStyles(theme => ({
 export default function Home({
   siteTitle,
   siteDescription,
+  siteGreeting,
   copyright,
   brand,
   hero,
@@ -40,11 +41,29 @@ export default function Home({
   if (hero) {
     pageDetails = (
       <Grid container>
-        <Grid item xs={12} key={`toolsContainer`}>
+        <Grid item xs={12} key={`heroContainer`}>
           <Img
             fluid={hero.childImageSharp.fluid}
-            style={{ height: 600, width: '100vw', textAlign: 'center' }}
+            style={{
+              height: '60vh',
+              width: '100vw',
+              textAlign: 'center',
+            }}
           />
+        </Grid>
+        <Grid item xs={12} key={`textContainer`}>
+          <Typography variant="h5" align="center" color="inherit" paragraph>
+            {siteDescription}
+          </Typography>
+          <Typography
+            style={{ textAlign: 'justify', padding: 10 }}
+            variant="body2"
+            align="center"
+            color="inherit"
+            paragraph
+          >
+            {siteGreeting}
+          </Typography>
         </Grid>
       </Grid>
     );
@@ -63,6 +82,9 @@ export default function Home({
         </Typography>
         <Typography variant="h5" align="center" color="inherit" paragraph>
           {siteDescription}
+        </Typography>
+        <Typography variant="h5" align="center" color="inherit" paragraph>
+          {siteGreeting}
         </Typography>
         <div className={classes.heroButtons}>
           <Grid container spacing={2} justify="center">
@@ -139,7 +161,7 @@ export default function Home({
                 key={`toolsContainer-${index}`}
               >
                 {/* <div style={{ textAlign: 'center' }}> */}
-                <ToolsGrid key={post.id} {...post} />
+                <PostGrid key={post.id} {...post} />
                 {/* </div> */}
               </Grid>
             ))}

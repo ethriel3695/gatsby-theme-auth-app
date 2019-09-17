@@ -3,8 +3,9 @@ module.exports = ({
   contentPath = 'content/data',
   basePath = '/',
   assetPath = 'content/assets',
-  toolPath = 'content/tools',
+  postPath = 'content/post',
   excelPath = 'content/excel',
+  eventPath = 'content/event',
   mdx = true,
 }) => {
   return {
@@ -12,6 +13,7 @@ module.exports = ({
       title: `Gatsby Theme Auth App`,
       author: `Name Placeholder`,
       description: `Description placeholder`,
+      greeting: `test`,
       copyright: `This is to insert a copyright message`,
       loginDesc: 'Login / Signup',
       isAuthApp: true,
@@ -50,29 +52,36 @@ module.exports = ({
       {
         resolve: `gatsby-source-filesystem`,
         options: {
-          path: contentPath || `content/data`,
-          name: contentPath || `content/data`,
+          path: contentPath,
+          name: contentPath,
         },
       },
       {
         resolve: `gatsby-source-filesystem`,
         options: {
-          path: assetPath || `content/assets`,
-          name: assetPath || `content/assets`,
+          path: assetPath,
+          name: assetPath,
         },
       },
       {
         resolve: `gatsby-source-filesystem`,
         options: {
-          path: toolPath || `content/tools`,
-          name: toolPath || `content/tools`,
+          path: postPath,
+          name: postPath,
         },
       },
       {
         resolve: `gatsby-source-filesystem`,
         options: {
-          name: excelPath || `content/excel`,
-          path: excelPath || `content/excel`,
+          name: eventPath,
+          path: eventPath,
+        },
+      },
+      {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+          name: excelPath,
+          path: excelPath,
         },
       },
       `gatsby-transformer-excel`,
