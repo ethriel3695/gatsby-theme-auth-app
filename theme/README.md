@@ -36,7 +36,12 @@ See the [live demo](https://sleepy-haibt-f5d703.netlify.com/)
 }
 ```
 
-4. Through the console type `npm i gatsby gatsby-theme-auth-app react react-dom`
+4. Through the console type
+
+```sh
+npm i gatsby gatsby-theme-auth-app react react-dom
+```
+
 5. Create a `content` folder in the `root` directory
 6. Create an `assets` folder in the `content` directory
 7. Create a `post` folder in the `content` directory
@@ -80,25 +85,6 @@ To use this theme in your Gatsby sites, follow these instructions:
     ```sh
     npm install --save gatsby-theme-auth-app
     ```
-
-2.  Add the theme to your `gatsby-config.js`:
-
-#### Example usage
-
-```js
-// gatsby-config.js
-module.exports = {
-  plugins: [
-    {
-      resolve: `gatsby-theme-auth-app`,
-      options: {
-        // basePath defaults to `/`
-        basePath: `/posts`,
-      },
-    },
-  ],
-};
-```
 
 ### Theme options
 
