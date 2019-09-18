@@ -10,7 +10,7 @@ let basePath;
 let contentPath;
 let assetPath;
 let excelPath;
-let eventPath;
+// let eventPath;
 let postPath;
 
 // These templates are simply data-fetching wrappers that import components
@@ -27,7 +27,7 @@ exports.onPreBootstrap = ({ store, reporter }, options) => {
   assetPath = options.assetPath || `content/assets`;
   postPath = options.postPath || `content/post`;
   excelPath = options.excelPath || `content/excel`;
-  eventPath = options.eventPath || `content/event`;
+  // eventPath = options.eventPath || `content/event`;
   if (!fs.existsSync(contentPath)) {
     reporter.info(`creating the ${contentPath} directory`);
     fs.mkdirSync(contentPath);
@@ -44,17 +44,17 @@ exports.onPreBootstrap = ({ store, reporter }, options) => {
     reporter.info(`creating the ${excelPath} directory`);
     fs.mkdirSync(excelPath);
   }
-  if (!fs.existsSync(eventPath)) {
-    reporter.info(`creating the ${eventPath} directory`);
-    fs.mkdirSync(eventPath);
-  }
+  // if (!fs.existsSync(eventPath)) {
+  //   reporter.info(`creating the ${eventPath} directory`);
+  //   fs.mkdirSync(eventPath);
+  // }
 
   const dirs = [
     path.join(program.directory, contentPath),
     path.join(program.directory, assetPath),
     path.join(program.directory, postPath),
     path.join(program.directory, excelPath),
-    path.join(program.directory, eventPath),
+    // path.join(program.directory, eventPath),
   ];
 
   dirs.forEach(dir => {
