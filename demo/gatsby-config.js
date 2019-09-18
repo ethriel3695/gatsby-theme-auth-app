@@ -9,6 +9,7 @@ module.exports = {
     title: `Demo`,
     author: `Reuben Ellis`,
     description: `An Authentication Site Built with Gatsby, GraphQL, Material-UI and Auth0.`,
+    greeting: `This is an optional greeting for a home page with a Hero image`,
     copyright: `Copyright © 2019 Devellistech - No part of this website may be reproduced without specific written permission... Just Kidding Copy Away!!!`,
     loginDesc: "Login / Signup",
     isAuthApp: true,

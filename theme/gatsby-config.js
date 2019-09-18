@@ -5,7 +5,6 @@ module.exports = ({
   assetPath = 'content/assets',
   postPath = 'content/post',
   excelPath = 'content/excel',
-  eventPath = 'content/event',
   mdx = true,
 }) => {
   return {
@@ -68,13 +67,6 @@ module.exports = ({
         options: {
           path: postPath,
           name: postPath,
-        },
-      },
-      {
-        resolve: `gatsby-source-filesystem`,
-        options: {
-          name: eventPath,
-          path: eventPath,
         },
       },
       {
