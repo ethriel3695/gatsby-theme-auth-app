@@ -11,12 +11,13 @@ let contentPath;
 let assetPath;
 let excelPath;
 let eventPath;
+let postPath;
 
 // These templates are simply data-fetching wrappers that import components
 const PageTemplate = require.resolve(`./src/templates/index`);
 const ToolsTemplate = require.resolve(`./src/templates/tools`);
 const PostTemplate = require.resolve(`./src/templates/post`);
-const TagTemplate = require.resolve(`./src/templates/Tags`);
+// const TagTemplate = require.resolve(`./src/templates/Tags`);
 
 // Verify the data directory exists
 exports.onPreBootstrap = ({ store, reporter }, options) => {
@@ -24,7 +25,7 @@ exports.onPreBootstrap = ({ store, reporter }, options) => {
   basePath = options.basePath || `/`;
   contentPath = options.contentPath || `content/data`;
   assetPath = options.assetPath || `content/assets`;
-  toolPath = options.toolPath || `content/tools`;
+  postPath = options.postPath || `content/post`;
   excelPath = options.excelPath || `content/excel`;
   eventPath = options.eventPath || `content/event`;
   if (!fs.existsSync(contentPath)) {
@@ -35,9 +36,9 @@ exports.onPreBootstrap = ({ store, reporter }, options) => {
     reporter.info(`creating the ${assetPath} directory`);
     fs.mkdirSync(assetPath);
   }
-  if (!fs.existsSync(toolPath)) {
-    reporter.info(`creating the ${toolPath} directory`);
-    fs.mkdirSync(toolPath);
+  if (!fs.existsSync(postPath)) {
+    reporter.info(`creating the ${postPath} directory`);
+    fs.mkdirSync(postPath);
   }
   if (!fs.existsSync(excelPath)) {
     reporter.info(`creating the ${excelPath} directory`);
@@ -51,6 +52,7 @@ exports.onPreBootstrap = ({ store, reporter }, options) => {
   const dirs = [
     path.join(program.directory, contentPath),
     path.join(program.directory, assetPath),
+    path.join(program.directory, postPath),
     path.join(program.directory, excelPath),
     path.join(program.directory, eventPath),
   ];
@@ -212,15 +214,15 @@ exports.createPages = async ({ actions, graphql, reporter }, themeOptions) => {
       },
     });
   });
-  tags.forEach(tag => {
-    createPage({
-      path: `/tags/${tag}`,
-      component: require.resolve(TagTemplate),
-      context: {
-        tag,
-      },
-    });
-  });
+  // tags.forEach(tag => {
+  //   createPage({
+  //     path: `/tags/${tag}`,
+  //     component: require.resolve(TagTemplate),
+  //     context: {
+  //       tag,
+  //     },
+  //   });
+  // });
   posts.forEach(post => {
     const slug = post.frontmatter.slug;
     createPage({

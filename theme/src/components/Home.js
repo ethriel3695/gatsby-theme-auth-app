@@ -36,6 +36,8 @@ export default function Home({
   posts,
   slugs,
 }) {
+  console.log(hero);
+  console.log(isAuthenticated());
   const classes = useStyles();
   let pageDetails = null;
   if (hero) {
