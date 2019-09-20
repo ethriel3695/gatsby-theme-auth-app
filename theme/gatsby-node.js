@@ -15,7 +15,7 @@ let postPath;
 
 // These templates are simply data-fetching wrappers that import components
 const PageTemplate = require.resolve(`./src/templates/index`);
-const ToolsTemplate = require.resolve(`./src/templates/tools`);
+// const ToolsTemplate = require.resolve(`./src/templates/tools`);
 const PostTemplate = require.resolve(`./src/templates/post`);
 // const TagTemplate = require.resolve(`./src/templates/Tags`);
 
