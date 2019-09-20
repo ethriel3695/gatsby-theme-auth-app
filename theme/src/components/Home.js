@@ -7,6 +7,15 @@ import { isAuthenticated } from '../utils/Auth';
 import Layout from './layout';
 import SEO from './seo';
 
+const useStyles = makeStyles(theme => ({
+  icon: {
+    marginRight: theme.spacing(2),
+  },
+  heroButtons: {
+    marginTop: theme.spacing(4),
+  },
+}));
+
 export default function Home({
   siteTitle,
   siteDescription,
