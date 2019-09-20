@@ -16,9 +16,6 @@ const useStyles = makeStyles(theme => ({
   icon: {
     marginRight: theme.spacing(2),
   },
-  heroContent: {
-    // backgroundColor: theme.palette.background.paper,
-  },
   heroButtons: {
     marginTop: theme.spacing(4),
   },
@@ -170,7 +167,7 @@ export default function Home({
           </Grid>
         </div>
       ) : (
-        <div className={classes.heroContent}>{pageDetails}</div>
+        <div>{pageDetails}</div>
       )}
       {/* <Footer socialLinks={socialLinks} /> */}
     </Layout>
