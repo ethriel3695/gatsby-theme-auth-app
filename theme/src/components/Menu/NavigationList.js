@@ -18,7 +18,6 @@ export default function NavigationList() {
   const navList = getSlugList();
   let navs = [];
   let navObject = null;
-  console.log(navList);
   if (navList) {
     navList.allMdx.nodes.map(node => {
       navObject = {

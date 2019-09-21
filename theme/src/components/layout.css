@@ -6,14 +6,18 @@
 }
 
 .fontAwesomeFooterIcon {
-    color: "#030ca5";
+    color: #030CA5;
+    cursor: pointer;
     text-decoration: "none";
+    text-decoration: none;
+    text-shadow: 2px 2px #282828;
 }
 
 .socialLink {
-    font-size: "25px";
-    margin: "1rem 1rem";
-    text-decoration: "none";
+    cursor: pointer;
+    font-size: 25px;
+    margin: 1rem 1rem;
+    text-decoration: none;
 }
 
 .externalLink {
@@ -21,4 +25,5 @@
     font-size: 18px;
     margin: 1rem 1rem;
     text-decoration: none;
+    text-shadow: 2px 2px #DDDDDD;
 }

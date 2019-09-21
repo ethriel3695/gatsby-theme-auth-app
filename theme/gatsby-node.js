@@ -82,6 +82,8 @@ exports.onCreateNode = ({ node, getNode }, settings) => {
   console.log('PLUGIN', node.fields.slug);
 };
 
+// EMBED EVENT CALENDAR ON A PAGE
+
 // Query for nav and create pages
 exports.createPages = async ({ actions, graphql, reporter }, themeOptions) => {
   const { createPage } = actions;

@@ -1,28 +1,11 @@
 import React from 'react';
-// import { Styled, css } from 'theme-ui';
 import Img from 'gatsby-image';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-// import Container from '@material-ui/core/Container';
-import Button from '@material-ui/core/Button';
 import PostGrid from './Grid/PostGrid';
 import { isAuthenticated } from '../utils/Auth';
 import Layout from './layout';
 import SEO from './seo';
-// import Footer from '../components/home-footer';
-
-const useStyles = makeStyles(theme => ({
-  icon: {
-    marginRight: theme.spacing(2),
-  },
-  heroContent: {
-    // backgroundColor: theme.palette.background.paper,
-  },
-  heroButtons: {
-    marginTop: theme.spacing(4),
-  },
-}));
 
 export default function Home({
   siteTitle,
@@ -36,9 +19,6 @@ export default function Home({
   posts,
   slugs,
 }) {
-  console.log(hero);
-  console.log(isAuthenticated());
-  const classes = useStyles();
   let pageDetails = null;
   if (hero) {
     pageDetails = (
@@ -58,7 +38,7 @@ export default function Home({
             {siteDescription}
           </Typography>
           <Typography
-            style={{ textAlign: 'justify', padding: 10 }}
+            style={{ textAlign: 'center', padding: 10 }}
             variant="body2"
             align="center"
             color="inherit"
@@ -88,29 +68,6 @@ export default function Home({
         <Typography variant="h5" align="center" color="inherit" paragraph>
           {siteGreeting}
         </Typography>
-        <div className={classes.heroButtons}>
-          <Grid container spacing={2} justify="center">
-            <Grid item>
-              <Button
-                variant="contained"
-                style={{ backgroundColor: '#c31924' }}
-                color="primary"
-              >
-                <a
-                  href="https://www.spudnik.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    color: '#eee',
-                    textDecoration: 'none',
-                  }}
-                >
-                  spudnik.com
-                </a>
-              </Button>
-            </Grid>
-          </Grid>
-        </div>
       </div>
     );
   }
@@ -124,14 +81,6 @@ export default function Home({
       isAuthApp={isAuthApp}
       slugs={slugs}
     >
-      {/*<Styled.h1
-        css={css({
-          mb: 1,
-        })}
-      >
-        {siteTitle}
-      </Styled.h1>
-      */}
       <SEO title="Home" />
       {isAuthenticated() ? (
         <div
@@ -141,18 +90,7 @@ export default function Home({
             padding: 15,
           }}
         >
-          <Grid
-            // style={{
-            //   display: 'flex',
-            //   flexDirection: 'row',
-            //   justifyContent: 'space-around',
-            // }}
-            container
-            spacing={4}
-            // direction="row"
-            // justify="space-around"
-            // alignItems="center"
-          >
+          <Grid container spacing={4}>
             {posts.map((post, index) => (
               <Grid
                 item
@@ -162,17 +100,14 @@ export default function Home({
                 lg={4}
                 key={`toolsContainer-${index}`}
               >
-                {/* <div style={{ textAlign: 'center' }}> */}
                 <PostGrid key={post.id} {...post} />
-                {/* </div> */}
               </Grid>
             ))}
           </Grid>
         </div>
       ) : (
-        <div className={classes.heroContent}>{pageDetails}</div>
+        <div>{pageDetails}</div>
       )}
-      {/* <Footer socialLinks={socialLinks} /> */}
     </Layout>
   );
 }
