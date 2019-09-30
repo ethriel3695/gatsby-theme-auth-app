@@ -1,22 +1,22 @@
 # Gatsby Theme Authentication Enabled Auth0
 
-This is theme which incorporates Auth0, Material-UI for styling components and a sidebar navigation.
+This is a theme which incorporates Auth0, Material-UI for styling components and a sidebar navigation
 
 See the [live demo](https://sleepy-haibt-f5d703.netlify.com/)
 
 ## Quick Start
 
-1.  Use the auth app starter
-
-    ```sh
-    gatsby new my-auth-app https://github.com/ethriel3695/gatsby-theme-auth-app
-    ```
+1. TODO: Put a quick start together
 
 ## Create Project
 
-1. Create a project folder in the demo directory C:/source/demo
-2. Through the console type `cd [projectName]`
-3. Create a package.json
+1. Create a project folder, example: directory C:/source/demo
+2. Through the comand line type `cd [projectName]`
+3. Create a package.json by typing into the command line:
+   ```sh
+   npm init
+   ```
+4. Fill in the package.json in your code editor with the "scripts" below
 
 ```json
 // package.json
@@ -36,15 +36,15 @@ See the [live demo](https://sleepy-haibt-f5d703.netlify.com/)
 }
 ```
 
-4. Through the console type
+4. Through the command line type
 
 ```sh
 npm i gatsby gatsby-theme-auth-app react react-dom
 ```
 
-5. Create a `content` folder in the `root` directory
-6. Create an `assets` folder in the `content` directory
-7. Create a `post` folder in the `content` directory
+5. Create a `content` folder in the `root` directory of your project
+6. Create an `assets` folder in the `content` directory of your project
+7. Create a `post` folder in the `content` directory of your project
 
 ## Assets
 
@@ -61,18 +61,28 @@ If you want a logo:
 `NOTE:` Iterate the post folders for example 01, 02, 03
 Folder structure `01/images/[image]`, `[postName].mdx`
 
+**NOTE:** The default project currently requires
+an images folder in each post folder with an image
+
+Future functionality will make this optional
+
 ## MDX file requirements
+
+**NOTE:** The settings below are what a post requires currently for
+graphql to find the post and render it on the page
 
 ---
 
-slug: /routeName
-label: Route Label for Nav
-title: Title of Post
-description: Description of Post
-date: Created Date
-categories: ["react", "node"]
-banner: "./images/hero.jpg"
-published: true
+| Key           | Expected value  | Description                                                                                         |
+| ------------- | --------------- | --------------------------------------------------------------------------------------------------- |
+| `slug`        | `/[routeName]`  | The Slug is the route appended to the url for this post                                             |
+| `label`       | `Label for Nav` | The name of the NavBar label                                                                        |
+| `title`       | `Title`         | The title of the post                                                                               |
+| `description` | `Description`   | Description of Post                                                                                 |
+| `date`        | `Date`          | Date of post. Navbar and posts are ordered by Date DESC. Date Format: 2019-09-29                    |
+| `categories`  | `[Tag, Tag]`    | These categories will be used as tags for filtering. A future update will rename categories to tags |
+| `banner`      | `imagePath`     | `./images/imageName.extension` Example: `./images/placeholder.jpg`                                  |
+| `published`   | `false/true`    | Post will only show up if published is `true`                                                       |
 
 ---
 
@@ -83,7 +93,7 @@ To use this theme in your Gatsby sites, follow these instructions:
 1.  Install the theme
 
     ```sh
-    npm install --save gatsby-theme-auth-app
+    npm i gatsby-theme-auth-app
     ```
 
 ### Theme options
@@ -102,14 +112,14 @@ In addition to the theme options, there are a handful of items you must modify v
 
 The Social tags, if left as an empty string will not appear in the footer
 
-The External Links accept a label as the text for the a tag and the link is the value for the href attribute
+The External Links are for related links to other websites. Example: `https://www.google.com`
 
 ```js
 // gatsby-config.js
 module.exports = {
   plugins: [
     {
-      resolve: "gatsby-theme-auth-app",
+      resolve: 'gatsby-theme-auth-app',
       options: {}
     }
   ],
@@ -119,23 +129,23 @@ module.exports = {
     description: `An Authentication Site Built with Gatsby, GraphQL, Material-UI and Auth0.`,
     greeting: `This is an optional greeting for a home page with a Hero image`,
     copyright: `Copyright © 2019 [Business] - No part of this website may be reproduced without specific written permission... Just Kidding Copy Away!!!`,
-    loginDesc: "Login / Signup",
+    loginDesc: 'Login / Signup',
     isAuthApp: false,
     social: {
-      facebook: "https://www.facebook.com/altcampus",
-      twitter: "https://www.twitter.com/altcampus",
-      github: "https://www.github.com/[githubUserName]",
-      email: "test@example.com"
+      facebook: 'https://www.facebook.com/altcampus',
+      twitter: 'https://www.twitter.com/altcampus',
+      github: 'https://www.github.com/[githubUserName]',
+      email: 'test@example.com'
     },
-    externalLinks: [{ label: "", link: "" }]
+    externalLinks: [{ label: '', link: '' }]
   }
 };
 ```
 
 ### Only if isAuthApp is set to true in the gatsby-config file
 
-1. Create An `env.development` file to hold your environment variables
-2. In addition replace the values in the site's `env.development` file with the correct values from your Auth0 account.
+1. Create An `.env.development` file to hold your environment variables
+2. In addition replace the values in the site's `.env.development` file with the correct values from your Auth0 account.
    If you do not have an Auth0 account create one for free [Auth0](https://auth0.com/signup?&signUpData=%7B%22category%22%3A%22button%22%7D)
 
 ```js
