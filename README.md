@@ -6,7 +6,7 @@ See the [live demo](https://sleepy-haibt-f5d703.netlify.com/)
 
 ## Quick Start
 
-1. TODO: Put a quick start together
+1. git clone https://github.com/ethriel3695/quickstart.git
 
 ## Create Project
 
