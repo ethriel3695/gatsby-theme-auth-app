@@ -149,7 +149,7 @@ module.exports = {
    If you do not have an Auth0 account create one for free [Auth0](https://auth0.com/signup?&signUpData=%7B%22category%22%3A%22button%22%7D)
 
 ```js
-// env.development
+// .env.development
 GATSBY_AUTH0_DOMAIN = domain.auth0.com; // Replace domain with your auth0 domain
 GATSBY_AUTH0_CLIENT_ID = secret_client_id; // This ID can be found after creating an Application within Auth0 within the Application tab
 GATSBY_AUTH0_CALLBACK_URL = `http://localhost:8000/callback`; //Remove the literal string character when replacing the callback url
