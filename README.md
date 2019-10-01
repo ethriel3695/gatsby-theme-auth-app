@@ -92,9 +92,9 @@ To use this theme in your Gatsby sites, follow these instructions:
 
 1.  Install the theme
 
-    ```sh
-    npm i gatsby-theme-auth-app
-    ```
+```sh
+npm i gatsby-theme-auth-app
+```
 
 ### Theme options
 
