@@ -29,7 +29,7 @@ export const pageQuery = graphql`
   query IndexPosts {
     allMdx(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { published: { eq: true } } }
+      filter: { frontmatter: { published: {} } }
       limit: 10
     ) {
       nodes {

@@ -6,7 +6,9 @@ See the [live demo](https://sleepy-haibt-f5d703.netlify.com/)
 
 ## Quick Start
 
-1. git clone https://github.com/ethriel3695/quickstart.git
+```sh
+git clone https://github.com/ethriel3695/quickstart.git
+```
 
 ## Create Project
 
@@ -119,7 +121,7 @@ The External Links are for related links to other websites. Example: `https://ww
 module.exports = {
   plugins: [
     {
-      resolve: 'gatsby-theme-auth-app',
+      resolve: "gatsby-theme-auth-app",
       options: {}
     }
   ],
@@ -129,15 +131,15 @@ module.exports = {
     description: `An Authentication Site Built with Gatsby, GraphQL, Material-UI and Auth0.`,
     greeting: `This is an optional greeting for a home page with a Hero image`,
     copyright: `Copyright © 2019 [Business] - No part of this website may be reproduced without specific written permission... Just Kidding Copy Away!!!`,
-    loginDesc: 'Login / Signup',
+    loginDesc: "Login / Signup",
     isAuthApp: false,
     social: {
-      facebook: 'https://www.facebook.com/altcampus',
-      twitter: 'https://www.twitter.com/altcampus',
-      github: 'https://www.github.com/[githubUserName]',
-      email: 'test@example.com'
+      facebook: "https://www.facebook.com/altcampus",
+      twitter: "https://www.twitter.com/altcampus",
+      github: "https://www.github.com/[githubUserName]",
+      email: "test@example.com"
     },
-    externalLinks: [{ label: '', link: '' }]
+    externalLinks: [{ label: "", link: "" }]
   }
 };
 ```

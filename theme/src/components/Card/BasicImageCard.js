@@ -6,8 +6,6 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import Img from 'gatsby-image';
 import CardContent from '@material-ui/core/CardContent';
-// import CardActions from '@material-ui/core/CardActions';
-// import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
 
@@ -64,18 +62,23 @@ class BasicImageCard extends React.Component {
 
   render() {
     const { classes } = this.props;
-
+    let Image = null;
+    if (this.props.banner) {
+      Image = (
+        <CardMedia>
+          <Img
+            fluid={this.props.banner.sharp.fluid}
+            // style={{ height: 200, width: 400 }}
+            alt={this.props.title}
+          />
+        </CardMedia>
+      );
+    }
     return (
       <Card className={classes.card}>
         <CardHeader title={this.props.title} subheader={this.props.subHeader} />
         <CardContent>
-          <CardMedia>
-            <Img
-              fluid={this.props.banner.sharp.fluid}
-              // style={{ height: 200, width: 400 }}
-              alt={this.props.title}
-            />
-          </CardMedia>
+          {Image}
           <Typography component="p">
             {this.props.content ? this.props.content : ''}
           </Typography>

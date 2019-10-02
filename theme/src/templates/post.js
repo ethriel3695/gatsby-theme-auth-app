@@ -11,13 +11,13 @@ export default function Post({ data: { mdx: post } }) {
       <div className="post-single-container">
         <article className="post-single">
           <header>
-            {banner ? (
+            {/* {banner ? (
               <Img
                 fluid={banner.sharp.fluid}
                 alt={title}
                 style={{ height: '50vh', width: '100vw', textAlign: 'center' }}
               />
-            ) : null}
+            ) : null} */}
             <h1 style={{ textAlign: 'center' }}>{title}</h1>
             <div style={{ textAlign: 'center' }}>
               <span>{date}</span>
@@ -37,16 +37,17 @@ export const pageQuery = graphql`
     mdx(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
         title
-        banner {
-          sharp: childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
-          }
-        }
         date(formatString: "MMMM Do, YYYY")
       }
       body
     }
   }
 `;
+
+// banner {
+//     sharp: childImageSharp {
+//       fluid {
+//         ...GatsbyImageSharpFluid_tracedSVG
+//       }
+//     }
+// }

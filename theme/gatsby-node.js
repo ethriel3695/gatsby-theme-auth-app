@@ -172,13 +172,13 @@ exports.createPages = async ({ actions, graphql, reporter }, themeOptions) => {
     hero,
   } = result.data;
   const posts = result.data.allMdx.nodes;
-  let tags = [
-    ...new Set(
-      posts.reduce((acc, post) => {
-        return acc.concat(post.frontmatter.categories);
-      }, []),
-    ),
-  ];
+  // let tags = [
+  //   ...new Set(
+  //     posts.reduce((acc, post) => {
+  //       return acc.concat(post.frontmatter.categories);
+  //     }, []),
+  //   ),
+  // ];
 
   const {
     title: siteTitle,

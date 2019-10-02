@@ -2,10 +2,7 @@
   "private": true,
   "workspaces": [
     "theme",
-    "demo",
-    "no-auth-demo",
-    "dashboard",
-    "blog"
+    "demo"
   ],
   "dependencies": {}
 }
