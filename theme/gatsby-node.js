@@ -113,6 +113,7 @@ exports.createPages = async ({ actions, graphql, reporter }, themeOptions) => {
           frontmatter {
             slug
             categories
+            showBanner
           }
         }
       }
@@ -199,6 +200,7 @@ exports.createPages = async ({ actions, graphql, reporter }, themeOptions) => {
   // Create a page for each Article
   posts.forEach(post => {
     const slug = post.frontmatter.slug;
+    const showBanner = post.frontmatter.showBanner;
     createPage({
       path: slug,
       component: require.resolve(PostTemplate),
@@ -212,6 +214,7 @@ exports.createPages = async ({ actions, graphql, reporter }, themeOptions) => {
         brand,
         isAuthApp,
         slug,
+        showBanner,
         slugs,
       },
     });
@@ -227,6 +230,7 @@ exports.createPages = async ({ actions, graphql, reporter }, themeOptions) => {
   // });
   posts.forEach(post => {
     const slug = post.frontmatter.slug;
+    const showBanner = post.frontmatter.showBanner;
     createPage({
       path: basePath,
       component: require.resolve(PageTemplate),
@@ -241,6 +245,7 @@ exports.createPages = async ({ actions, graphql, reporter }, themeOptions) => {
         hero,
         isAuthApp,
         slug,
+        showBanner,
         slugs,
       },
     });

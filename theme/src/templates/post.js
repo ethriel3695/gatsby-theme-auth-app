@@ -5,19 +5,19 @@ import Layout from '../components/layout';
 import Img from 'gatsby-image';
 
 export default function Post({ data: { mdx: post } }) {
-  const { banner, title, date } = post.frontmatter;
+  const { banner, title, date, showBanner } = post.frontmatter;
   return (
     <Layout>
       <div className="post-single-container">
         <article className="post-single">
           <header>
-            {/* {banner ? (
+            {banner && showBanner ? (
               <Img
                 fluid={banner.sharp.fluid}
                 alt={title}
                 style={{ height: '50vh', width: '100vw', textAlign: 'center' }}
               />
-            ) : null} */}
+            ) : null}
             <h1 style={{ textAlign: 'center' }}>{title}</h1>
             <div style={{ textAlign: 'center' }}>
               <span>{date}</span>
@@ -38,6 +38,14 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM Do, YYYY")
+        banner {
+          sharp: childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
+        }
+        showBanner
       }
       body
     }

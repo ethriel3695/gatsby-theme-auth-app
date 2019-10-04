@@ -63,28 +63,25 @@ If you want a logo:
 `NOTE:` Iterate the post folders for example 01, 02, 03
 Folder structure `01/images/[image]`, `[postName].mdx`
 
-**NOTE:** The default project currently requires
-an images folder in each post folder with an image
-
-Future functionality will make this optional
+**NOTE:** As of Version 1.1.2, Images are now optional. You no longer have to include a banner attribute in your MDX file
 
 ## MDX file requirements
 
-**NOTE:** The settings below are what a post requires currently for
-graphql to find the post and render it on the page
+### Header Format
 
 ---
 
-| Key           | Expected value  | Description                                                                                         |
-| ------------- | --------------- | --------------------------------------------------------------------------------------------------- |
-| `slug`        | `/[routeName]`  | The Slug is the route appended to the url for this post                                             |
-| `label`       | `Label for Nav` | The name of the NavBar label                                                                        |
-| `title`       | `Title`         | The title of the post                                                                               |
-| `description` | `Description`   | Description of Post                                                                                 |
-| `date`        | `Date`          | Date of post. Navbar and posts are ordered by Date DESC. Date Format: 2019-09-29                    |
-| `categories`  | `[Tag, Tag]`    | These categories will be used as tags for filtering. A future update will rename categories to tags |
-| `banner`      | `imagePath`     | `./images/imageName.extension` Example: `./images/placeholder.jpg`                                  |
-| `published`   | `false/true`    | Post will only show up if published is `true`                                                       |
+| Key           | Expected value  | Description                                                                                         | Required |
+| ------------- | --------------- | --------------------------------------------------------------------------------------------------- | -------- |
+| `slug`        | `/[routeName]`  | The Slug is the route appended to the url for this post                                             | Yes      |
+| `label`       | `Label for Nav` | The name of the NavBar label                                                                        | Yes      |
+| `title`       | `Title`         | The title of the post                                                                               | Yes      |
+| `description` | `Description`   | Description of Post                                                                                 | Yes      |
+| `date`        | `Date`          | Date of post. Navbar and posts are ordered by Date DESC. Date Format: 2019-09-29                    | No       |
+| `categories`  | `[Tag, Tag]`    | These categories will be used as tags for filtering. A future update will rename categories to tags | No       |
+| `showBanner`  | `false/true`    | Determines whether the banner is shown on the post page                                             | Yes      |
+| `banner`      | `imagePath`     | `./images/imageName.extension` Example: `./images/placeholder.jpg`                                  | No       |
+| `published`   | `false/true`    | Post will only show up if published is `true`                                                       | Yes      |
 
 ---
 
@@ -121,7 +118,7 @@ The External Links are for related links to other websites. Example: `https://ww
 module.exports = {
   plugins: [
     {
-      resolve: "gatsby-theme-auth-app",
+      resolve: 'gatsby-theme-auth-app',
       options: {}
     }
   ],
@@ -131,15 +128,15 @@ module.exports = {
     description: `An Authentication Site Built with Gatsby, GraphQL, Material-UI and Auth0.`,
     greeting: `This is an optional greeting for a home page with a Hero image`,
     copyright: `Copyright © 2019 [Business] - No part of this website may be reproduced without specific written permission... Just Kidding Copy Away!!!`,
-    loginDesc: "Login / Signup",
+    loginDesc: 'Login / Signup',
     isAuthApp: false,
     social: {
-      facebook: "https://www.facebook.com/altcampus",
-      twitter: "https://www.twitter.com/altcampus",
-      github: "https://www.github.com/[githubUserName]",
-      email: "test@example.com"
+      facebook: 'https://www.facebook.com/altcampus',
+      twitter: 'https://www.twitter.com/altcampus',
+      github: 'https://www.github.com/[githubUserName]',
+      email: 'test@example.com'
     },
-    externalLinks: [{ label: "", link: "" }]
+    externalLinks: [{ label: '', link: '' }]
   }
 };
 ```
