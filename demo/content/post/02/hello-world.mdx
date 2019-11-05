@@ -4,9 +4,9 @@ label: Article 2
 title: Card 2
 description: MDX Example Description ...
 date: 2019-08-15
-categories: ["react", "node"]
+categories: ['react', 'node']
 showBanner: true
-banner: "./images/cardLogo.jpg"
+banner: './images/cardLogo.jpg'
 published: true
 ---
 
@@ -17,10 +17,10 @@ Delete me, and get writing!
 ```js:title=gatsby-config.js
 module.exports = {
   __experimentalThemes: [
-    "gatsby-theme-blog", // highlight-line
-    "gatsby-theme-notes",
+    'gatsby-theme-blog', // highlight-line
+    'gatsby-theme-notes',
   ],
-}
+};
 ```
 
 This is another paragraph after the code block.
@@ -34,11 +34,11 @@ Showcasing how MDX for Gatsby.js works ... The Counter component is imported exp
 ## This is a secondary heading
 
 ```jsx
-import React from "react"
-import { ThemeProvider } from "theme-ui"
-import theme from "./theme"
+import React from 'react';
+import { ThemeProvider } from 'theme-ui';
+import theme from './theme';
 
 export default props => (
   <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
-)
+);
 ```
