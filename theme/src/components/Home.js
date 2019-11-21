@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Img from 'gatsby-image';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -20,6 +20,10 @@ export default function Home({
   slugs,
 }) {
   let pageDetails = null;
+  const [isAuth, setIsAuth] = useState(false);
+  useEffect(() => {
+    setIsAuth(isAuthenticated());
+  });
   if (hero) {
     pageDetails = (
       <Grid container>
@@ -82,7 +86,7 @@ export default function Home({
       slugs={slugs}
     >
       <SEO title="Home" />
-      {isAuthenticated() ? (
+      {isAuth ? (
         <div
           style={{
             overflowX: 'hidden',

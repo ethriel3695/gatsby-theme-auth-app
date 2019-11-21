@@ -2,7 +2,8 @@
   "private": true,
   "workspaces": [
     "theme",
-    "demo"
+    "demo",
+    "one-thousand-eyes"
   ],
   "dependencies": {}
 }
