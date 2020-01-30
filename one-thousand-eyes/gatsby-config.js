@@ -6,7 +6,7 @@ module.exports = {
     },
   ],
   siteMetadata: {
-    title: `Barony of One Thousand Eyes`,
+    title: `One Thousand Eyes`,
     author: `Reuben Ellis`,
     description: `Welcome to the Barony of One Thousand Eyes`,
     greeting: `The Barony of One Thousand Eyes is a local branch of the Society for Creative Anachronism (“SCA”), the world’s largest “living history” organization, dedicated to re-creating most aspects of Medieval life including tourney combat, feasting, crafts, archery, and much more. Our local group is located in eastern Idaho, centered on Idaho Falls. If you’re interested in participating, but live outside our area, visit the SCA’s web site to look up your nearest local branch.
@@ -18,6 +18,8 @@ module.exports = {
 No part of this website may be reproduced without the specific written permission. The original contributors retain the copyright of certain portions of this site. Please refer to our terms and uses page for more information.`,
     loginDesc: 'Login',
     isAuthApp: false,
+    newsletterTitle: 'Newsletter',
+    newsletterURL: '../../../assets/files/Argus.pdf',
     social: {
       facebook: 'https://www.facebook.com/barony1000eyes',
       twitter: '',

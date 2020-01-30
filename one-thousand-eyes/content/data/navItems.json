@@ -1,4 +1,0 @@
-[
-  { "route": "/", "label": "Home", "loadOrder": 1 },
-  { "route": "/uprising", "label": "Uprising War", "loadOrder": 2 }
-]
